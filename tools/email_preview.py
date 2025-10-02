@@ -17,7 +17,6 @@ class EmailPreviewInput(BaseModel):
         description="JSON string containing email data with fields: to, subject, body, priority, issue_type"
     )
 
-
 class EmailPreviewTool(BaseTool):
     """
     Tool for creating formatted email previews.
