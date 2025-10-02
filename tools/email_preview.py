@@ -22,7 +22,6 @@ class EmailPreviewTool(BaseTool):
     Tool for creating formatted email previews.
     Does NOT send actual emails - only generates preview content for display.
     """
-    
     name: str = "email_preview_generator"
     description: str = (
         "Generates formatted email previews showing what emails WOULD be sent to "
@@ -30,7 +29,8 @@ class EmailPreviewTool(BaseTool):
         "with subject lines, recipients, and full message bodies."
     )
     args_schema: type[BaseModel] = EmailPreviewInput
-    
+
+
     def _run(self, emails_data: str) -> str:
         """
         Generate formatted email previews from email data.
