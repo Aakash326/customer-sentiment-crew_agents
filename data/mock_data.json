@@ -1,0 +1,154 @@
+{
+  "fallback_mentions": [
+    {
+      "platform": "Twitter/X",
+      "content": "Apple's iOS 18 keeps crashing on my iPhone 15. Anyone else experiencing this? Submitted feedback but no response yet. Really frustrating when trying to use basic apps.",
+      "title": "iOS 18 Crash Issues",
+      "url": "https://twitter.com/user123/status/1234567890",
+      "published_date": "2024-10-02T14:30:00Z",
+      "relevance_score": 0.9,
+      "search_query": "Apple complaints",
+      "mention_type": "complaint"
+    },
+    {
+      "platform": "Reddit",
+      "content": "PSA: Tesla Model Y charging issues at Supercharger stations. Multiple users in r/TeslaMotors reporting 50+ minute wait times and failed charging sessions. This is getting ridiculous.",
+      "title": "Tesla Supercharger Problems",
+      "url": "https://reddit.com/r/TeslaMotors/comments/abc123",
+      "published_date": "2024-10-02T12:15:00Z",
+      "relevance_score": 0.8,
+      "search_query": "Tesla issues",
+      "mention_type": "complaint"
+    },
+    {
+      "platform": "Hacker News",
+      "content": "Microsoft's latest Windows 11 update broke compatibility with several enterprise applications. Our IT department is scrambling to find workarounds. When will Microsoft test these updates properly?",
+      "title": "Windows 11 Update Breaks Enterprise Apps",
+      "url": "https://news.ycombinator.com/item?id=9876543",
+      "published_date": "2024-10-02T10:45:00Z",
+      "relevance_score": 0.9,
+      "search_query": "Microsoft problems",
+      "mention_type": "complaint"
+    },
+    {
+      "platform": "Twitter/X",
+      "content": "Amazon Prime Video quality has been terrible lately. Constant buffering and video quality drops to 480p even with gigabit internet. Prime membership feels like a waste now.",
+      "title": "Amazon Prime Video Quality Issues",
+      "url": "https://twitter.com/user456/status/2345678901",
+      "published_date": "2024-10-02T09:20:00Z",
+      "relevance_score": 0.7,
+      "search_query": "Amazon complaints",
+      "mention_type": "complaint"
+    },
+    {
+      "platform": "Reddit",
+      "content": "Google Search results are getting worse. Finding accurate information is becoming impossible with all the AI-generated content and SEO spam flooding the results.",
+      "title": "Google Search Quality Decline",
+      "url": "https://reddit.com/r/google/comments/def456",
+      "published_date": "2024-10-02T08:30:00Z",
+      "relevance_score": 0.6,
+      "search_query": "Google issues",
+      "mention_type": "complaint"
+    },
+    {
+      "platform": "TechCrunch",
+      "content": "Meta's latest VR headset update introduced motion sickness for many users. The company acknowledges the issue but hasn't provided a timeline for fixes.",
+      "title": "Meta VR Update Causes Motion Sickness",
+      "url": "https://techcrunch.com/2024/10/02/meta-vr-motion-sickness",
+      "published_date": "2024-10-02T07:15:00Z",
+      "relevance_score": 0.8,
+      "search_query": "Meta problems",
+      "mention_type": "complaint"
+    },
+    {
+      "platform": "Twitter/X",
+      "content": "Netflix's new interface is confusing and makes it harder to find content. Why fix something that wasn't broken? The old UI was much more intuitive.",
+      "title": "Netflix UI Complaints",
+      "url": "https://twitter.com/user789/status/3456789012",
+      "published_date": "2024-10-02T06:45:00Z",
+      "relevance_score": 0.5,
+      "search_query": "Netflix complaints",
+      "mention_type": "complaint"
+    },
+    {
+      "platform": "Hacker News",
+      "content": "Spotify's algorithm has become aggressive with podcast recommendations. Music discovery feels broken when half my suggestions are podcasts I don't want.",
+      "title": "Spotify Algorithm Issues",
+      "url": "https://news.ycombinator.com/item?id=1357924680",
+      "published_date": "2024-10-02T05:30:00Z",
+      "relevance_score": 0.6,
+      "search_query": "Spotify issues",
+      "mention_type": "complaint"
+    },
+    {
+      "platform": "Reddit",
+      "content": "Adobe Creative Cloud subscription prices keep increasing while performance gets worse. Considering switching to alternatives like Figma and DaVinci Resolve.",
+      "title": "Adobe CC Price and Performance Issues",
+      "url": "https://reddit.com/r/Adobe/comments/ghi789",
+      "published_date": "2024-10-02T04:20:00Z",
+      "relevance_score": 0.7,
+      "search_query": "Adobe complaints",
+      "mention_type": "complaint"
+    },
+    {
+      "platform": "Twitter/X",
+      "content": "Uber's surge pricing during rush hour is getting out of control. $45 for a 10-minute ride that usually costs $12. This pricing model is unsustainable.",
+      "title": "Uber Surge Pricing Criticism",
+      "url": "https://twitter.com/user012/status/4567890123",
+      "published_date": "2024-10-02T03:15:00Z",
+      "relevance_score": 0.6,
+      "search_query": "Uber complaints",
+      "mention_type": "complaint"
+    },
+    {
+      "platform": "The Verge",
+      "content": "Samsung Galaxy users report battery drain issues after latest software update. Some devices losing 50% battery overnight in standby mode.",
+      "title": "Samsung Galaxy Battery Drain",
+      "url": "https://theverge.com/2024/10/02/samsung-battery-drain",
+      "published_date": "2024-10-02T02:45:00Z",
+      "relevance_score": 0.8,
+      "search_query": "Samsung issues",
+      "mention_type": "complaint"
+    },
+    {
+      "platform": "Reddit",
+      "content": "Instagram's algorithm changes make it impossible for small businesses to reach customers organically. Forced to pay for ads just to maintain visibility.",
+      "title": "Instagram Algorithm Hurts Small Business",
+      "url": "https://reddit.com/r/Instagram/comments/jkl012",
+      "published_date": "2024-10-02T01:30:00Z",
+      "relevance_score": 0.7,
+      "search_query": "Instagram complaints",
+      "mention_type": "complaint"
+    },
+    {
+      "platform": "Hacker News",
+      "content": "Discord's new nitro pricing structure feels like a cash grab. Basic features that used to be free now require premium subscription.",
+      "title": "Discord Nitro Pricing Backlash",
+      "url": "https://news.ycombinator.com/item?id=2468135790",
+      "published_date": "2024-10-02T00:45:00Z",
+      "relevance_score": 0.6,
+      "search_query": "Discord complaints",
+      "mention_type": "complaint"
+    },
+    {
+      "platform": "Twitter/X",
+      "content": "YouTube's ad frequency has become unbearable. 2-3 ads before every video, plus mid-roll ads. It's driving users away from the platform.",
+      "title": "YouTube Ad Frequency Complaints",
+      "url": "https://twitter.com/user345/status/5678901234",
+      "published_date": "2024-10-01T23:30:00Z",
+      "relevance_score": 0.7,
+      "search_query": "YouTube complaints",
+      "mention_type": "complaint"
+    },
+    {
+      "platform": "Ars Technica",
+      "content": "Intel's latest CPU architecture shows concerning stability issues under high workloads. Multiple reports of system crashes during intensive tasks.",
+      "title": "Intel CPU Stability Concerns",
+      "url": "https://arstechnica.com/2024/10/01/intel-cpu-stability",
+      "published_date": "2024-10-01T22:15:00Z",
+      "relevance_score": 0.9,
+      "search_query": "Intel issues",
+      "mention_type": "complaint"
+    }
+  ]
+}
