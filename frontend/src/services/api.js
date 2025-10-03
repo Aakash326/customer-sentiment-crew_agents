@@ -155,3 +155,122 @@ export const getSystemInfo = async () => {
     throw new Error('Cannot fetch system information')
   }
 }
+
+/**
+ * Start fast analysis with real-time streaming
+ * @param {string} companyName - Company to analyze
+ * @param {Function} onProgress - Callback for progress updates
+ * @param {AbortSignal} signal - Abort signal
+ */
+export const streamFastAnalysis = async (companyName, onProgress, signal = null) => {
+  return new Promise((resolve, reject) => {
+    const eventSource = new EventSource(
+      `${API_BASE_URL}/analyze/fast/stream?company_name=${encodeURIComponent(companyName)}`
+    )
+
+    eventSource.onmessage = (event) => {
+      try {
+        const data = JSON.parse(event.data)
+
+        if (data.type === 'complete') {
+          eventSource.close()
+          resolve(data.results)
+        } else if (data.type === 'error') {
+          eventSource.close()
+          reject(new Error(data.message))
+        } else {
+          // Progress update
+          onProgress(data)
+        }
+      } catch (error) {
+        eventSource.close()
+        reject(error)
+      }
+    }
+
+    eventSource.onerror = (error) => {
+      eventSource.close()
+      reject(new Error('Connection to server lost'))
+    }
+
+    // Handle abort
+    if (signal) {
+      signal.addEventListener('abort', () => {
+        eventSource.close()
+        reject(new Error('Analysis stopped by user'))
+      })
+    }
+  })
+}
+
+/**
+ * Start deep analysis with real-time streaming
+ */
+export const streamDeepAnalysis = async (companyName, onProgress, signal = null) => {
+  return new Promise((resolve, reject) => {
+    const eventSource = new EventSource(
+      `${API_BASE_URL}/analyze/deep/stream?company_name=${encodeURIComponent(companyName)}`
+    )
+
+    eventSource.onmessage = (event) => {
+      try {
+        const data = JSON.parse(event.data)
+
+        if (data.type === 'complete') {
+          eventSource.close()
+          resolve(data.results)
+        } else if (data.type === 'error') {
+          eventSource.close()
+          reject(new Error(data.message))
+        } else {
+          onProgress(data)
+        }
+      } catch (error) {
+        eventSource.close()
+        reject(error)
+      }
+    }
+
+    eventSource.onerror = () => {
+      eventSource.close()
+      reject(new Error('Connection lost'))
+    }
+
+    if (signal) {
+      signal.addEventListener('abort', () => {
+        eventSource.close()
+        reject(new Error('Analysis stopped'))
+      })
+    }
+  })
+}
+
+/**
+ * Compare multiple companies
+ * @param {string[]} companyNames - Array of 2-3 company names
+ * @param {string} workflow - 'fast' or 'deep'
+ */
+export const compareCompanies = async (companyNames, workflow = 'fast') => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/analyze/compare`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        company_names: companyNames,
+        workflow: workflow
+      })
+    })
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}))
+      throw new Error(errorData.detail || `Comparison failed with status ${response.status}`)
+    }
+
+    return await response.json()
+  } catch (error) {
+    console.error('Comparison error:', error)
+    throw error
+  }
+}

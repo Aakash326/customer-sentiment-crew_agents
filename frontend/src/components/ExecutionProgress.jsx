@@ -5,10 +5,10 @@ function ExecutionProgress({ workflow, progress, currentAgent, completedAgents, 
   const [elapsedTime, setElapsedTime] = useState(0)
 
   const agents = workflow === 'fast'
-    ? ['Monitor Agent', 'Sentiment Analyzer', 'Response Coordinator']
-    : ['Monitor Agent', 'Sentiment Analyzer', 'Priority Ranker', 'Context Investigator', 'Response Coordinator']
+    ? ['Monitor Agent', 'Sentiment Analyzer', 'Response Coordinator', 'Executive Insights Generator']
+    : ['Monitor Agent', 'Sentiment Analyzer', 'Priority Ranker', 'Context Investigator', 'Response Coordinator', 'Executive Insights Generator']
 
-  const estimatedTime = workflow === 'fast' ? 12 : 30
+  const estimatedTime = workflow === 'fast' ? 18 : 35
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,7 +24,8 @@ function ExecutionProgress({ workflow, progress, currentAgent, completedAgents, 
       'Sentiment Analyzer': '😊',
       'Priority Ranker': '🎯',
       'Context Investigator': '🔍',
-      'Response Coordinator': '📧'
+      'Response Coordinator': '📧',
+      'Executive Insights Generator': '✨'
     }
     return icons[agentName] || '🤖'
   }

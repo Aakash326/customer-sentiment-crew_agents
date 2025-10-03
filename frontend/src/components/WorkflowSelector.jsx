@@ -28,13 +28,13 @@ function WorkflowSelector({ selected, onChange, disabled }) {
           </div>
 
           <p className="text-gray-300 mb-4">
-            Quick insights in 10-15 seconds
+            Quick insights in 15-20 seconds
           </p>
 
           <div className="space-y-2 text-left">
             <div className="flex items-center gap-2 text-sm">
               <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-              <span>3 Agents</span>
+              <span>4 Agents</span>
             </div>
             <div className="flex items-center gap-2 text-sm">
               <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
@@ -46,13 +46,17 @@ function WorkflowSelector({ selected, onChange, disabled }) {
             </div>
             <div className="flex items-center gap-2 text-sm">
               <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
+              <span>Executive Insights Dashboard</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm">
+              <div className="w-2 h-2 bg-indigo-400 rounded-full"></div>
               <span>Real Internet Search</span>
             </div>
           </div>
 
           <div className="mt-4 pt-4 border-t border-white/10">
             <p className="text-sm text-gray-400">
-              ⚡ Best for: Quick response needs
+              ⚡ Best for: Quick response with strategic insights
             </p>
           </div>
         </button>
@@ -79,13 +83,13 @@ function WorkflowSelector({ selected, onChange, disabled }) {
           </div>
 
           <p className="text-gray-300 mb-4">
-            Comprehensive analysis in 25-35 seconds
+            Comprehensive analysis in 30-40 seconds
           </p>
 
           <div className="space-y-2 text-left">
             <div className="flex items-center gap-2 text-sm">
               <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-              <span>5 Agents</span>
+              <span>6 Agents</span>
             </div>
             <div className="flex items-center gap-2 text-sm">
               <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
@@ -99,11 +103,15 @@ function WorkflowSelector({ selected, onChange, disabled }) {
               <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
               <span>Pattern Investigation</span>
             </div>
+            <div className="flex items-center gap-2 text-sm">
+              <div className="w-2 h-2 bg-indigo-400 rounded-full"></div>
+              <span>Comprehensive Insights Report</span>
+            </div>
           </div>
 
           <div className="mt-4 pt-4 border-t border-white/10">
             <p className="text-sm text-gray-400">
-              🔍 Best for: Strategic decisions
+              🔍 Best for: C-level strategic decisions
             </p>
           </div>
         </button>

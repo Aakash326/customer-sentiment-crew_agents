@@ -43,3 +43,101 @@
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-primary;
 }
+
+/* Light Mode Styles */
+.light {
+  color-scheme: light;
+}
+
+.light body {
+  background: linear-gradient(to bottom right, #f9fafb, #e5e7eb, #d1d5db);
+}
+
+.light .glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light .gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.light .gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Override text colors in light mode */
+.light {
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #6b7280;
+}
+
+.light * {
+  color: var(--text-primary);
+}
+
+.light .text-gray-300,
+.light .text-gray-400 {
+  color: #6b7280 !important;
+}
+
+.light .text-gray-500 {
+  color: #4b5563 !important;
+}
+
+.light .text-white {
+  color: #111827 !important;
+}
+
+/* Light mode backgrounds */
+.light .bg-gray-900 {
+  background-color: #f9fafb !important;
+}
+
+.light .bg-gray-800 {
+  background-color: #f3f4f6 !important;
+}
+
+.light .bg-slate-800 {
+  background-color: #f3f4f6 !important;
+}
+
+.light .bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.light .bg-white\/10 {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light .bg-white\/20 {
+  background-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Light mode borders */
+.light .border-white\/10 {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light .border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Light mode scrollbar */
+.light::-webkit-scrollbar-track {
+  background-color: #f3f4f6;
+}
+
+.light::-webkit-scrollbar-thumb {
+  background-color: rgba(102, 126, 234, 0.5);
+}
+
+/* Add smooth transition to theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

@@ -28,15 +28,35 @@ export const formatProcessingTime = (time) => {
 }
 
 /**
- * Parse sentiment score from text
+ * Parse sentiment score from text (returns 0-100 scale for comparison mode)
  * @param {string} text - Text containing sentiment information
- * @returns {number|null} Sentiment score between -1 and 1
+ * @returns {number} Sentiment score 0-100
  */
 export const parseSentimentScore = (text) => {
-  if (!text) return null
+  if (!text) return 50
 
-  const match = text.match(/sentiment[:\s]+(-?\d+\.?\d*)/i)
-  return match ? parseFloat(match[1]) : null
+  // Try to find sentiment score patterns
+  const patterns = [
+    /sentiment.*?(\d+)\/100/i,
+    /score.*?(\d+)%/i,
+    /(\d+)\/100.*?sentiment/i,
+    /sentiment.*?(\d+)%/i
+  ]
+
+  for (const pattern of patterns) {
+    const match = text.match(pattern)
+    if (match) {
+      return parseInt(match[1])
+    }
+  }
+
+  // Default estimation based on keyword analysis
+  const negative = (text.match(/negative|critical|urgent|crisis/gi) || []).length
+  const positive = (text.match(/positive|good|excellent|satisfied/gi) || []).length
+  const total = negative + positive
+
+  if (total === 0) return 50 // Neutral default
+  return Math.round((positive / total) * 100)
 }
 
 /**
@@ -176,4 +196,33 @@ export const calculateReadTime = (text, wordsPerMinute = 200) => {
 export const formatNumber = (num) => {
   if (num === null || num === undefined) return 'N/A'
   return num.toLocaleString('en-US')
+}
+
+/**
+ * Extract executive insights from crew output
+ * @param {string} crewOutput - Full crew output text
+ * @returns {string|null} Executive insights section or null
+ */
+export const extractExecutiveInsights = (crewOutput) => {
+  if (!crewOutput) return null
+
+  // Try to find the insights output file content
+  const insightsMatch = crewOutput.match(/outputs\/insights_.*?\.txt[:\s]+(.*?)(?=outputs\/|$)/is)
+  if (insightsMatch) {
+    return insightsMatch[1].trim()
+  }
+
+  // Try to find Executive Insights section directly
+  const directMatch = crewOutput.match(/(?:EXECUTIVE INSIGHTS|1\.\s*EXECUTIVE SUMMARY)(.*?)(?=\n\n#{2,}|\n\n[A-Z]{3,}|$)/is)
+  if (directMatch) {
+    return directMatch[0].trim()
+  }
+
+  // Try to find insights by looking for all 6 sections
+  const fullInsightsMatch = crewOutput.match(/(1\.\s*EXECUTIVE SUMMARY.*?6\.\s*OPPORTUNITIES.*?)(?=\n\n|$)/is)
+  if (fullInsightsMatch) {
+    return fullInsightsMatch[1].trim()
+  }
+
+  return null
 }
